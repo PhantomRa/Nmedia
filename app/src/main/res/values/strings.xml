@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">NMedia</string>
     <string name="app_name_text">NMedia!</string>
+    <string name="author_name">Netology.</string>
+    <string name="date">21 may in 18:36</string>
+    <string name="content">Hello, it\'s new Netology! -> \nhttp://netolo.gy/fyb
+    </string>
+    <string name="likes" translatable="false">10</string>
+    <string name="reposts" translatable="false">5</string>
+    <string name="views" translatable="false">5</string>
 </resources>

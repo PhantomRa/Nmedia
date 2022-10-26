@@ -2,6 +2,7 @@
 <resources>
     <dimen name="commonSpacing">16dp</dimen>
     <dimen name="avatarSize">48dp</dimen>
+    <dimen name="widgetWidth">48dp</dimen>
     <dimen name="iconSize">24dp</dimen>
     <dimen name="textSize">16sp</dimen>
 </resources>

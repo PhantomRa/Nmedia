@@ -71,34 +71,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleBarrier" />
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/webIv"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="@dimen/commonSpacing"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/webTv1"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/contentTv" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/webTv1"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/webIv"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@id/webTv2"-->
-    <!--        />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/webTv2"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/webTv1"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@id/contentBarrier"-->
-    <!--        />-->
-
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/contentBarrier"
         android:layout_width="wrap_content"
@@ -107,84 +79,72 @@
         app:barrierMargin="@dimen/commonSpacing"
         app:constraint_referenced_ids="contentTv" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container2"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/likes"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/commonSpacing"
-        android:paddingBottom="@dimen/commonSpacing"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/commonSpacing"
+        android:layout_marginEnd="@dimen/commonSpacing"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_like_24"
+        app:layout_constraintEnd_toStartOf="@+id/likesTv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contentBarrier">
+        app:layout_constraintTop_toBottomOf="@id/contentBarrier" />
 
-        <ImageView
-            android:id="@+id/likes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/commonSpacing"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_like_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/likesTv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/likesTv"
+        android:layout_width="@dimen/widgetWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/commonSpacing"
+        android:text="@string/likes"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="@id/likes"
+        app:layout_constraintEnd_toStartOf="@+id/share"
+        app:layout_constraintStart_toEndOf="@id/likes"
+        app:layout_constraintTop_toTopOf="@id/likes" />
 
-        <TextView
-            android:id="@+id/likesTv"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/commonSpacing"
-            android:text="@string/likes"
-            android:textSize="@dimen/textSize"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/share"
-            app:layout_constraintStart_toEndOf="@id/likes"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/commonSpacing"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_share_24"
+        app:layout_constraintBottom_toBottomOf="@id/likes"
+        app:layout_constraintEnd_toStartOf="@+id/shareTv"
+        app:layout_constraintStart_toEndOf="@id/likesTv"
+        app:layout_constraintTop_toTopOf="@id/likes" />
 
-        <ImageView
-            android:id="@+id/share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_share_24"
-            android:layout_marginEnd="@dimen/commonSpacing"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/shareTv"
-            app:layout_constraintStart_toEndOf="@id/likesTv"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/shareTv"
+        android:layout_width="@dimen/widgetWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/commonSpacing"
+        android:text="@string/reposts"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="@id/likes"
+        app:layout_constraintStart_toEndOf="@+id/share"
+        app:layout_constraintTop_toTopOf="@id/likes" />
 
-        <TextView
-            android:id="@+id/shareTv"
-            android:layout_width="48dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/commonSpacing"
-            android:text="@string/reposts"
-            android:textSize="@dimen/textSize"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/share"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/commonSpacing"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_views_24"
+        app:layout_constraintBottom_toBottomOf="@id/likes"
+        app:layout_constraintEnd_toStartOf="@+id/viewsTv"
+        app:layout_constraintTop_toTopOf="@id/likes" />
 
-        <ImageView
-            android:id="@+id/views"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/commonSpacing"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_views_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/viewsTv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/viewsTv"
-            android:layout_width="48dp"
-            android:layout_height="match_parent"
-            android:text="@string/views"
-            android:textSize="@dimen/textSize"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/viewsTv"
+        android:layout_width="@dimen/widgetWidth"
+        android:layout_height="wrap_content"
+        android:text="@string/views"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="@id/likes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/likes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

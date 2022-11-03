@@ -36,7 +36,7 @@
         android:id="@+id/published"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/date"
+        android:text="@string/published"
         android:textSize="@dimen/textSize"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
         app:layout_constraintStart_toStartOf="@id/author"

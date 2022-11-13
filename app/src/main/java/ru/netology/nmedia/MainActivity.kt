@@ -75,5 +75,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        binding.cancelImageButton.setOnClickListener {
+            with(binding.contentEditText) {
+                binding.editGroup.visibility = View.GONE
+                viewModel.save()
+
+                setText("")
+                clearFocus()
+                AndroidUtils.hideKeyboard(this)
+            }
+        }
     }
 }

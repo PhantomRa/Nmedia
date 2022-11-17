@@ -12,4 +12,8 @@
     <string name="post_text">Post text</string>
     <string name="error_empty_content">Content can\'t be empty</string>
     <string name="post_tools_edit_message">Edit Message</string>
+    <string name="description_post_avatar" translatable="false">post_avatar</string>
+    <string name="description_tools_edit_icon" translatable="false">edit_icon</string>
+    <string name="description_tools_edit_cancel_button" translatable="false">cancel_button</string>
+    <string name="description_tools_edit_save_button" translatable="false">save_button</string>
 </resources>

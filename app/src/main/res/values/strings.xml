@@ -16,4 +16,7 @@
     <string name="description_tools_edit_icon" translatable="false">edit_icon</string>
     <string name="description_tools_edit_cancel_button" translatable="false">cancel_button</string>
     <string name="description_tools_edit_save_button" translatable="false">save_button</string>
+    <string name="chooser_share_post">Share post</string>
+    <string name="save">Save</string>
+    <string name="hint_post_content">Input post content here</string>
 </resources>

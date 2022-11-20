@@ -9,4 +9,6 @@
     <dimen name="m8">8dp</dimen>
     <dimen name="m16">16dp</dimen>
     <dimen name="m24">24dp</dimen>
+    <dimen name="m128">128dp</dimen>
+    <dimen name="m256">256dp</dimen>
 </resources>

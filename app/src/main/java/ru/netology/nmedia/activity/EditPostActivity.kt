@@ -12,7 +12,6 @@ class EditPostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//      Как получить входную строку данных?
         val intentStr = intent.getStringExtra(Intent.EXTRA_TEXT)
         binding.editText.setText(intentStr)
         binding.editText.requestFocus()

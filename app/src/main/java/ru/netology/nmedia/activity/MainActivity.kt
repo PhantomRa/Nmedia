@@ -19,11 +19,8 @@ class MainActivity : AppCompatActivity() {
     val editPostLauncher = registerForActivityResult(EditPostResultContract()) { result ->
         result ?: return@registerForActivityResult
 
-//        TODO: Как передать пост сюда?
-
-//        Не обрабатывает текущий пост, создает новый
-//        viewModel.changePostContent(result)
-//        viewModel.save()
+        viewModel.changePostContent(result)
+        viewModel.save()
     }
     private val interactionListener = object : OnInteractionListener {
         override fun onLike(post: Post) {
@@ -43,10 +40,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onEdit(post: Post) {
+            viewModel.edit(post)
             editPostLauncher.launch(post.content)
-
-//            viewModel.changePostContent(post.content)
-//            viewModel.save()
         }
 
         override fun onRemove(post: Post) {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/m8"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <ImageView
         android:id="@+id/avatarImageView"
@@ -62,13 +62,52 @@
         android:id="@+id/contentTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/m8"
         android:autoLink="web"
         android:text="@string/post_content"
         android:textSize="@dimen/textSize"
-        app:layout_constraintBottom_toTopOf="@id/contentBarrier"
+        app:layout_constraintBottom_toTopOf="@id/videoView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleBarrier" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/videoGroup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:constraint_referenced_ids="videoView,videoButton"
+        app:layout_constraintBottom_toTopOf="@id/contentBarrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentTextView" />
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m256"
+        android:layout_marginTop="@dimen/m8"
+        android:foreground="@mipmap/ic_video_preview"
+        android:foregroundGravity="fill"
+        app:layout_constraintBottom_toTopOf="@id/contentBarrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentTextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/videoButton"
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:icon="@drawable/ic_play_filled_48"
+        app:iconGravity="textStart"
+        app:iconSize="@dimen/m48"
+        app:layout_constraintBottom_toBottomOf="@id/videoView"
+        app:layout_constraintEnd_toEndOf="@id/videoView"
+        app:layout_constraintStart_toStartOf="@id/videoView"
+        app:layout_constraintTop_toTopOf="@id/videoView" />
+
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/contentBarrier"

@@ -13,7 +13,7 @@ private val empty = Post(
 )
 
 class PostViewModel : ViewModel() {
-    private var repository: PostRepository = PostRepositoryInMemoryImpl()
+    private val repository: PostRepository = PostRepositoryInMemoryImpl()
     val data = repository.getAll()
     val edited = MutableLiveData(empty)
 
@@ -32,7 +32,7 @@ class PostViewModel : ViewModel() {
         edited.value = post
     }
 
-    fun changeContent(content: String) {
+    fun changePostContent(content: String) {
         val text = content.trim()
         if (edited.value?.content == text) {
             return

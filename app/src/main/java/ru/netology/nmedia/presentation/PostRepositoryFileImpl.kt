@@ -28,6 +28,7 @@ class PostRepositoryFileImpl(
         } else {
             sync()
         }
+        if (posts.isNotEmpty() && posts.first().id > nextId) nextId = posts.first().id
     }
 
     override fun getAll(): LiveData<List<Post>> = data
@@ -62,7 +63,7 @@ class PostRepositoryFileImpl(
         if (post.id == 0L) {
             posts = listOf(
                 post.copy(
-                    id = nextId++,
+                    id = ++nextId,
                     author = "Me",
                     published = "Now",
                 )

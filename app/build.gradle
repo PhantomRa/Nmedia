@@ -41,7 +41,9 @@ dependencies {
     def fragment_version = "1.5.4"
     def activity_version = "1.5.0"
     def mdc_version = "1.7.0"
+    def gson_version = "2.10"
 
+    implementation "com.google.code.gson:gson:$gson_version"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     implementation "androidx.activity:activity-ktx:$activity_version"
     // ViewModel

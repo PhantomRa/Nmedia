@@ -8,4 +8,5 @@ interface OnInteractionListener {
     fun onEdit(post: Post) {}
     fun onRemove(post: Post) {}
     fun onPlay(uri: String) {}
+    fun onPostClick(id: Long) {}
 }

@@ -53,6 +53,10 @@ class PostViewHolder(
             videoButton.setOnClickListener {
                 post.video?.let { url -> onInteractionListener.onPlay(url) }
             }
+
+            binding.root.setOnClickListener {
+                onInteractionListener.onPostClick(post.id)
+            }
         }
     }
 

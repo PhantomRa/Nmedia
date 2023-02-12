@@ -3,10 +3,9 @@ package ru.netology.nmedia.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import ru.netology.nmedia.R
-import ru.netology.nmedia.activity.NewPostFragment.Companion.ARG_CONTENT
+import ru.netology.nmedia.activity.NewPostFragment.Companion.textArg
 
 class AppActivity : AppCompatActivity(R.layout.activity_app) {
 //    val binding by lazy { ActivityIntentHandlerBinding.inflate(layoutInflater) }
@@ -21,20 +20,23 @@ class AppActivity : AppCompatActivity(R.layout.activity_app) {
             }
 
             val text = it.getStringExtra(Intent.EXTRA_TEXT)
-            if (text.isNullOrBlank()) {
-//                Snackbar.make(binding.root, R.string.error_empty_content, LENGTH_INDEFINITE)
-//                    .setAction(android.R.string.ok) {
-//                        finish()
-//                    }.show()
+            if (text?.isNotBlank() != true) {
                 return@let
             }
             intent.removeExtra(Intent.EXTRA_TEXT)
             findNavController(R.id.nav_host_fragment_container).navigate(
-                R.id.feedFragmentToNewPostFragment.apply {
-                    bundleOf(ARG_CONTENT to text)
-//                    Bundle().apply {
-//                        textArg = text
-//                    }
+                R.id.feedFragmentToNewPostFragment,
+//                    bundleOf(ARG_CONTENT to text)
+                Bundle().apply {
+                    textArg = text
+                }
+            )
+
+            findNavController(R.id.nav_host_fragment_container).navigate(
+                R.id.feedFragmentToPreviewPostFragment,
+//                    bundleOf(ARG_CONTENT to text)
+                Bundle().apply {
+                    textArg = text
                 }
             )
         }

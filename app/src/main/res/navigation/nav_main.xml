@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/previewPostFragment"
-        android:name="ru.netology.nmedia.activity.FeedFragment"
+        android:name="ru.netology.nmedia.activity.PreviewPostFragment"
         android:label="fragment_preview_post"
         tools:layout="@layout/fragment_preview_post" />
 </navigation>

@@ -15,11 +15,10 @@ import ru.netology.nmedia.util.StringArg
 
 class NewPostFragment : Fragment(R.layout.fragment_new_post) {
     companion object {
-        const val ARG_CONTENT = "ARG_CONTENT"
         var Bundle.textArg: String? by StringArg
     }
 
-//    var content: String? = null
+    //    var content: String? = null
     private var _binding: FragmentNewPostBinding? = null
     private val binding: FragmentNewPostBinding get() = _binding!!
 

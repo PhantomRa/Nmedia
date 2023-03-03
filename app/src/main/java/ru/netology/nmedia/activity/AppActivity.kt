@@ -3,9 +3,7 @@ package ru.netology.nmedia.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import ru.netology.nmedia.R
-import ru.netology.nmedia.activity.NewPostFragment.Companion.textArg
 
 class AppActivity : AppCompatActivity(R.layout.activity_app) {
 //    val binding by lazy { ActivityIntentHandlerBinding.inflate(layoutInflater) }
@@ -24,21 +22,6 @@ class AppActivity : AppCompatActivity(R.layout.activity_app) {
                 return@let
             }
             intent.removeExtra(Intent.EXTRA_TEXT)
-            findNavController(R.id.nav_host_fragment_container).navigate(
-                R.id.feedFragmentToNewPostFragment,
-//                    bundleOf(ARG_CONTENT to text)
-                Bundle().apply {
-                    textArg = text
-                }
-            )
-
-            findNavController(R.id.nav_host_fragment_container).navigate(
-                R.id.feedFragmentToPreviewPostFragment,
-//                    bundleOf(ARG_CONTENT to text)
-                Bundle().apply {
-                    textArg = text
-                }
-            )
         }
     }
 }

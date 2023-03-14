@@ -1,10 +1,7 @@
 package ru.netology.nmedia.adapter
 
-import android.content.Intent
-import android.net.Uri
 import android.view.View
 import android.widget.PopupMenu
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
@@ -24,7 +21,8 @@ class PostViewHolder(
             shareButton.text = countToString(post.shareCount)
             viewsButton.text = countToString(post.viewCount)
             likeButton.isChecked = post.likedByMe
-            if (post.video == null) videoGroup.visibility = View.GONE else videoGroup.visibility = View.VISIBLE
+            if (post.video == null) videoGroup.visibility = View.GONE else videoGroup.visibility =
+                View.VISIBLE
 
             likeButton.setOnClickListener {
                 onInteractionListener.onLike(post)
@@ -54,6 +52,10 @@ class PostViewHolder(
 
             videoButton.setOnClickListener {
                 post.video?.let { url -> onInteractionListener.onPlay(url) }
+            }
+
+            binding.root.setOnClickListener {
+                onInteractionListener.onPostClick(post.id)
             }
         }
     }

@@ -1,7 +1,5 @@
 package ru.netology.nmedia.dto
 
-import android.widget.VideoView
-
 data class Post(
     val id: Long,
     val author: String,

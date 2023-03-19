@@ -18,19 +18,11 @@ class NewPostFragment : Fragment(R.layout.fragment_new_post) {
         var Bundle.textArg: String? by StringArg
     }
 
-    //    var content: String? = null
     private var _binding: FragmentNewPostBinding? = null
     private val binding: FragmentNewPostBinding get() = _binding!!
 
     //    private val viewModel: PostViewModel by activityViewModels()
     private val viewModel: PostViewModel by viewModels(::requireParentFragment)
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        arguments?.let {
-//            content = it.getString(ARG_CONTENT).toString()
-//        }
-//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,6 +34,10 @@ class NewPostFragment : Fragment(R.layout.fragment_new_post) {
         arguments?.textArg?.let(binding.editText::setText)
 //        viewModel.edited.observe(viewLifecycleOwner) { post ->
 //            binding.editText.setText(post.content)
+//        }
+
+//        val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+//
 //        }
 
         binding.okFAB.setOnClickListener {

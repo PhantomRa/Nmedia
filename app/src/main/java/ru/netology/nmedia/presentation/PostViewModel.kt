@@ -3,7 +3,9 @@ package ru.netology.nmedia.presentation
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import ru.netology.nmedia.db.AppDb
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.repository.PostRepositorySQLiteImpl
 
 private val empty = Post(
     id = 0,
@@ -13,9 +15,11 @@ private val empty = Post(
 )
 
 class PostViewModel(application: Application) : AndroidViewModel(application) {
-    //    Types: "memory", "sharedPref", "file"
-    private val saveType = "file"
+    //    Types: "memory", "sharedPref", "file", "db"
+    private val saveType = "db"
+    private val appDb = AppDb.getInstance(application)
     private var repository = when (saveType) {
+        "db" -> PostRepositorySQLiteImpl(appDb.postDao)
         "sharedPref" -> PostRepositorySharedPrefsImpl(application)
         "file" -> PostRepositoryFileImpl(application)
         else -> PostRepositoryInMemoryImpl()

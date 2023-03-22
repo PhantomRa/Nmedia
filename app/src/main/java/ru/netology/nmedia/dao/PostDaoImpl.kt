@@ -5,7 +5,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import ru.netology.nmedia.dto.Post
 
-class PostDaoImpl(private val db: SQLiteDatabase) : PostDao {
+class PostDaoImpl(private val db: SQLiteDatabase) : PostDaoSQLite {
 
     companion object {
         val DDL = """

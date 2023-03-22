@@ -2,19 +2,19 @@ package ru.netology.nmedia.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import ru.netology.nmedia.dao.PostDao
 import ru.netology.nmedia.dao.PostDaoImpl
+import ru.netology.nmedia.dao.PostDaoSQLite
 
-class AppDb private constructor(db: SQLiteDatabase) {
-    val postDao: PostDao = PostDaoImpl(db)
+class AppDbSQLite private constructor(db: SQLiteDatabase) {
+    val postDao: PostDaoSQLite = PostDaoImpl(db)
 
     companion object {
         @Volatile
-        private var instance: AppDb? = null
+        private var instance: AppDbSQLite? = null
 
-        fun getInstance(context: Context): AppDb {
+        fun getInstance(context: Context): AppDbSQLite {
             return instance ?: synchronized(this) {
-                instance ?: AppDb(
+                instance ?: AppDbSQLite(
                     buildDatabase(context, arrayOf(PostDaoImpl.DDL))
                 ).also { instance = it }
             }

@@ -13,4 +13,11 @@
     <string name="chooser_share_post">Поделиться</string>
     <string name="save">Сохранить</string>
     <string name="hint_post_content">Input post content here</string>
+    <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
+    <string name="channel_remote_name">Уведомления с сервера</string>
+    <string name="channel_remote_description">Уведомления с удаленного сервера</string>
+    <string name="google_api_unavailable">Сервисы Google Play недоступны</string>
+    <string name="notification_unknown_action">Уведомление с неизвестным действием</string>
+    <string name="notification_user_shared">%1$s поделился записью</string>
+    <string name="notification_user_posted">%1$s опубликовал новую запись:</string>
 </resources>

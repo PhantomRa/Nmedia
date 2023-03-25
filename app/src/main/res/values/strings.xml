@@ -19,4 +19,11 @@
     <string name="chooser_share_post">Share post</string>
     <string name="save">Save</string>
     <string name="hint_post_content">Input post content here</string>
+    <string name="notification_user_liked">%1$s liked post %2$s</string>
+    <string name="channel_remote_name">Notifications from server</string>
+    <string name="channel_remote_description">Notifications from remote server</string>
+    <string name="google_api_unavailable">Google Play services Unavailable</string>
+    <string name="notification_unknown_action">Notification with unknown action</string>
+    <string name="notification_user_shared">%1$s shared a post</string>
+    <string name="notification_user_posted">%1$s posted a new post:</string>
 </resources>

@@ -11,7 +11,6 @@ import com.google.firebase.messaging.RemoteMessage
 import com.google.gson.Gson
 import ru.netology.nmedia.R
 import kotlin.random.Random
-import kotlin.random.nextInt
 
 class FCMService : FirebaseMessagingService() {
     private val action = "action"
